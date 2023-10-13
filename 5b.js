@@ -107,31 +107,6 @@ let nextLevelpackId;
 let whiteAlpha = 0;
 let coinAlpha = 0;
 
-// Create a function to detect the keystrokes.
-function detectKeystrokes(event) {
-  // Get the key that was pressed.
-  const key = event.key;
-
-  // Check if the key pressed is "s", "e", or "x".
-  if (key === "s" || key === "e" || key === "x") {
-    // Add the key to the "keyBuffer" variable.
-    const keyBuffer = `${event.key}+`;
-
-    // Check if the "keyBuffer" variable contains "s + e + x".
-    if (keyBuffer === "s+e+x") {
-      // Add 1 to the level progress.
-      levelProgress++;
-
-      // Update the HTML element that displays the level progress.
-      const levelProgressElement = document.getElementById("level-progress");
-      levelProgressElement.textContent = levelProgress;
-    }
-  }
-}
-
-// Add the "detectKeystrokes" function to the "keydown" event listener.
-document.addEventListener("keydown", detectKeystrokes);
-
 function clearVars() {
 	deathCount = timer = coins = bonusProgress = levelProgress = 0;
 	bonusesCleared = new Array(33).fill(false);
@@ -10352,3 +10327,27 @@ function deselectAllTextBoxes() {
 	}
 	canvas.setAttribute('contenteditable', false);
 }
+// Create a function to detect the keystrokes.
+function detectKeystrokes(event) {
+  // Get the key that was pressed.
+  const key = event.key;
+
+  // Check if the key pressed is "s", "e", or "x".
+  if (key === "s" || key === "e" || key === "x") {
+    // Add the key to the "keyBuffer" variable.
+    const keyBuffer = `${event.key}+`;
+
+    // Check if the "keyBuffer" variable contains "s + e + x".
+    if (keyBuffer === "s+e+x") {
+      // Add 1 to the level progress.
+      levelProgress++;
+
+      // Update the HTML element that displays the level progress.
+      const levelProgressElement = document.getElementById("level-progress");
+      levelProgressElement.textContent = levelProgress;
+    }
+  }
+}
+
+// Add the "detectKeystrokes" function to the "keydown" event listener.
+document.addEventListener("keydown", detectKeystrokes);
