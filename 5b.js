@@ -92,7 +92,7 @@ let timer;
 let coins;
 let longMode = false;
 let quirksMode = false;
-let devmode = false;
+let devMode = false;
 let enableExperimentalFeatures = window.location.hostname==='localhost';
 let screenShake = true;
 let screenFlashes = true;
